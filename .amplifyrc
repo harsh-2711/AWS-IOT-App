@@ -1,0 +1,14 @@
+{
+    "providers": {
+        "awscloudformation": {
+            "AuthRoleName": "mplifyo-20190109170230-authRole",
+            "UnauthRoleArn": "arn:aws:iam::269890922202:role/mplifyo-20190109170230-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::269890922202:role/mplifyo-20190109170230-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "mplifyo-20190109170230-deployment",
+            "UnauthRoleName": "mplifyo-20190109170230-unauthRole",
+            "StackName": "mplifyo-20190109170230",
+            "StackId": "arn:aws:cloudformation:us-east-1:269890922202:stack/mplifyo-20190109170230/41674d90-1402-11e9-8a39-120fc18a2440"
+        }
+    }
+}

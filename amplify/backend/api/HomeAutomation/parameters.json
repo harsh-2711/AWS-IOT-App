@@ -1,0 +1,13 @@
+{
+    "AppSyncApiName": "HomeAutomation",
+    "AuthCognitoUserPoolId": {
+        "Fn::GetAtt": [
+            "authcognitoe2cb868d",
+            "Outputs.UserPoolId"
+        ]
+    },
+    "schemaGraphql": "s3://mplifyo-20190109170230-deployment/amplify-appsync-files/schema.graphql.1547179314442",
+    "ResolverBucket": "mplifyo-20190109170230-deployment",
+    "ResolverRootKey": "amplify-appsync-files",
+    "DeploymentTimestamp": "1547179314442"
+}

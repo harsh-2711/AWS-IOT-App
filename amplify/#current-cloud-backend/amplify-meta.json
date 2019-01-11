@@ -1,0 +1,56 @@
+{
+	"providers": {
+		"awscloudformation": {
+			"AuthRoleName": "mplifyo-20190109170230-authRole",
+			"UnauthRoleArn": "arn:aws:iam::269890922202:role/mplifyo-20190109170230-unauthRole",
+			"AuthRoleArn": "arn:aws:iam::269890922202:role/mplifyo-20190109170230-authRole",
+			"Region": "us-east-1",
+			"DeploymentBucketName": "mplifyo-20190109170230-deployment",
+			"UnauthRoleName": "mplifyo-20190109170230-unauthRole",
+			"StackName": "mplifyo-20190109170230",
+			"StackId": "arn:aws:cloudformation:us-east-1:269890922202:stack/mplifyo-20190109170230/41674d90-1402-11e9-8a39-120fc18a2440"
+		}
+	},
+	"api": {
+		"HomeAutomation": {
+			"service": "AppSync",
+			"providerPlugin": "awscloudformation",
+			"output": {
+				"securityType": "AMAZON_COGNITO_USER_POOLS",
+				"GraphQLAPIIdOutput": "nmtdpls225a2vh47yr6bvfup7q",
+				"GraphQLAPIEndpointOutput": "https://eogl4gy6aneh7goztndmo6ooom.appsync-api.us-east-1.amazonaws.com/graphql",
+				"GraphQLAPIKeyOutput": "da2-q47h27tjwnai7nlrrlvkmbh7yu",
+				"AuthCognitoUserPoolIdOutput": "us-east-1_zJVUlUC3K",
+				"AuthCognitoUserPoolNativeClientId": "See UserPool: us-east-1_zJVUlUC3K",
+				"AuthCognitoUserPoolJSClientId": "See UserPool: us-east-1_zJVUlUC3K"
+			},
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/mplifyo-20190109170230-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+				"logicalId": "apiHomeAutomation"
+			},
+			"lastPushTimeStamp": "2019-01-11T04:06:22.292Z",
+			"lastPushDirHash": "uU7G1ubrctwUQRCyy6WkSUXQcP8="
+		}
+	},
+	"auth": {
+		"cognitoe2cb868d": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/mplifyo-20190109170230-deployment/amplify-cfn-templates/auth/cognitoe2cb868d-cloudformation-template.yml",
+				"logicalId": "authcognitoe2cb868d"
+			},
+			"lastPushTimeStamp": "2019-01-11T04:06:22.292Z",
+			"output": {
+				"AppClientSecret": "1opv4lffa8d8kvsmpq4hvjmgsd1ochtrna6u0h0p4eshrrlaf25i",
+				"UserPoolId": "us-east-1_zJVUlUC3K",
+				"AppClientIDWeb": "36n764csmvsndl0qgiu56bkmsg",
+				"AppClientID": "4bjesr8ge2q2dfcqa8obitghmt",
+				"IdentityPoolId": "us-east-1:9a220758-0e60-4451-b876-ff4797b88192",
+				"IdentityPoolName": "cognitoe2cb868d_identitypool_e2cb868d",
+				"UserPoolName": "cognitoe2cb868d_userpool_e2cb868d"
+			},
+			"lastPushDirHash": "ZCXwFtFo3Sv8IZ8yWbpQa+KVCkU="
+		}
+	}
+}

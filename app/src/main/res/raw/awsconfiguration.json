@@ -1,0 +1,30 @@
+{
+    "UserAgent": "aws-amplify-cli/0.1.0",
+    "Version": "1.0",
+    "IdentityManager": {
+        "Default": {}
+    },
+    "AppSync": {
+        "Default": {
+            "ApiUrl": "https://eogl4gy6aneh7goztndmo6ooom.appsync-api.us-east-1.amazonaws.com/graphql",
+            "Region": "us-east-1",
+            "AuthMode": "AMAZON_COGNITO_USER_POOLS"
+        }
+    },
+    "CredentialsProvider": {
+        "CognitoIdentity": {
+            "Default": {
+                "PoolId": "us-east-1:9a220758-0e60-4451-b876-ff4797b88192",
+                "Region": "us-east-1"
+            }
+        }
+    },
+    "CognitoUserPool": {
+        "Default": {
+            "PoolId": "us-east-1_zJVUlUC3K",
+            "AppClientId": "4bjesr8ge2q2dfcqa8obitghmt",
+            "AppClientSecret": "1opv4lffa8d8kvsmpq4hvjmgsd1ochtrna6u0h0p4eshrrlaf25i",
+            "Region": "us-east-1"
+        }
+    }
+}
