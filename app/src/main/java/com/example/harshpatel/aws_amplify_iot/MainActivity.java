@@ -51,8 +51,7 @@ public class MainActivity extends AppCompatActivity {
 
         runMutation();
         runQuery();
-
-
+        subscribe();
 
     }
 
