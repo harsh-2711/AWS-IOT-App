@@ -3,6 +3,10 @@ package com.example.harshpatel.aws_amplify_iot;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import com.amazonaws.Response;
 import com.amazonaws.amplify.generated.graphql.CreateTodoMutation;
@@ -28,10 +32,24 @@ public class MainActivity extends AppCompatActivity {
 
     private AWSAppSyncClient mAWSAppSyncClient;
 
+    Button send, receive, subscribe;
+    EditText title, description;
+    TextView responsetext;
+    String responsebuffer;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        send = (Button) findViewById(R.id.send);
+        receive = (Button) findViewById(R.id.receive);
+        subscribe = (Button) findViewById(R.id.subscribe);
+
+        title = (EditText) findViewById(R.id.title) ;
+        description = (EditText) findViewById(R.id.description);
+
+        responsetext = (TextView) findViewById(R.id.responsetext);
 
 
         mAWSAppSyncClient = AWSAppSyncClient.builder()
@@ -49,16 +67,39 @@ public class MainActivity extends AppCompatActivity {
                          }
                      }).build();
 
-        runMutation();
-        runQuery();
-        subscribe();
+        send.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String titletext = title.getText().toString();
+                String descriptiontext = description.getText().toString();
+
+                runMutation(titletext, descriptiontext);
+
+            }
+        });
+
+        receive.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                runQuery();
+                responsetext.setText(responsebuffer);
+            }
+        });
+
+        subscribe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                subscribe();
+            }
+        });
 
     }
 
-    public void runMutation(){
+    public void runMutation(String title, String description){
         CreateTodoInput createTodoInput = CreateTodoInput.builder().
-                name("Use AppSync").
-                description("Realtime and Offline").
+                name(title).
+                description(description).
                 build();
 
         mAWSAppSyncClient.mutate(CreateTodoMutation.builder().input(createTodoInput).build())
@@ -89,6 +130,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onResponse(@Nonnull com.apollographql.apollo.api.Response<ListTodosQuery.Data> response) {
             Log.i("Results", response.data().listTodos().items().toString());
+            responsebuffer = response.data().listTodos().items().toString();
         }
 
         @Override

@@ -1,14 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+   <EditText
+       android:id="@+id/title"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:hint="Title" />
+
+   <EditText
+       android:id="@+id/description"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:hint="Description" />
+
+   <Button
+       android:id="@+id/send"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:text="Send"
+       android:layout_marginBottom="30dp"/>
+
+   <Button
+       android:id="@+id/receive"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:text="Receive"/>
 
    <TextView
-       android:layout_width="wrap_content"
+       android:id="@+id/responsetext"
+       android:layout_width="match_parent"
        android:layout_height="wrap_content"
-       android:text="HELLO WORLD" />
+       android:text="Response goes here"
+       android:textSize="20sp"
+       android:layout_marginBottom="100dp"/>
 
-</android.support.design.widget.CoordinatorLayout>
+   <Button
+       android:id="@+id/subscribe"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:text="Subscibe"
+       android:visibility="invisible"/>
+
+</LinearLayout>
